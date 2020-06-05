@@ -1,4 +1,4 @@
-package intech;
+package publisher;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,10 +11,10 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
         DataSourceTransactionManagerAutoConfiguration.class,
         HibernateJpaAutoConfiguration.class
 })
-public class IntechtaskApplication {
+public class PublisherApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(IntechtaskApplication.class, args);
+        SpringApplication.run(PublisherApplication.class, args);
     }
 
 }
