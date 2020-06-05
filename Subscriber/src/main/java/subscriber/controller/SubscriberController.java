@@ -14,28 +14,5 @@ public class SubscriberController {
 
     @PostMapping(path = "/recieveMessage")
     void recieveMessage(@RequestBody MessageDto messageDto) {
-
-
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
-        System.out.println(messageDto);
     }
 }
