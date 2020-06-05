@@ -1,4 +1,4 @@
-package com.kuzmin.evgenii.intech.model;
+package intech.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
