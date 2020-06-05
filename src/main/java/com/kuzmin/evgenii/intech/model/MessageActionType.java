@@ -1,6 +1,6 @@
 package com.kuzmin.evgenii.intech.model;
 
-/**<b> Dto содержащее дату и место рождения посетителя.
+/**<b>Класс перечисления возможных типов сообщений</b>.
  * @author KuzminEY
  */
 public enum MessageActionType {
