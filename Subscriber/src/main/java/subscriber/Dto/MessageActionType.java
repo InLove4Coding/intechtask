@@ -1,4 +1,4 @@
-package subscriber.model;
+package subscriber.Dto;
 
 public enum MessageActionType {
     PURCHASE,
