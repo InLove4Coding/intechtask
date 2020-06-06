@@ -25,7 +25,7 @@ public class PublisherServiceImpl implements PublisherService {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<MessageDto> httpEntity = new HttpEntity<>(messageDto, httpHeaders);
-        restTemplate.postForEntity("http://localhost:8080/api/subscriber/v1/recieveMessage", messageDto, String.class);
+        restTemplate.postForEntity("http://localhost:8080/api/subscriber/v1/receiveMessage", httpEntity, String.class);
     }
 
 }
