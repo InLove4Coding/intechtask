@@ -27,14 +27,15 @@ public class MessageDto {
 
     public MessageDto() {
         //Пусть будет номер от 0 до 1000. Не отрицательны до максимального.
-        this.msisdn = new Random().nextInt(1001);
+        this.msisdn = new Random().nextInt(Integer.MAX_VALUE);
 
-        log.info("Формируем номер для нового сообщения: {}",msisdn);
+        log.info("Формируем номер для нового сообщения: {}", msisdn);
 
         if (new Random().nextBoolean()) {
             this.action = MessageActionType.PURCHASE;
         } else this.action = MessageActionType.SUBSCRIPTION;
 
-        this.timestamp = new Timestamp(System.currentTimeMillis());;
+        this.timestamp = new Timestamp(System.currentTimeMillis());
+        ;
     }
 }
