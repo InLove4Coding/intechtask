@@ -2,21 +2,20 @@ package subscriber.model;
 
 
 import lombok.Data;
-import subscriber.Dto.MessageActionType;
+import subscriber.dto.MessageActionType;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Data
 @Entity
-@Table(name = "ACTIONS")
-public class ActionTable {
-
+@Table(name = "SUBSCRIPTION")
+public class SubscriptionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "MESSAGE_ID")
-    Integer id;
+    @Column(name = "ID")
+    long id;
 
     @Column(name = "MESSAGE_NUMBER")
     private int msisdn;

@@ -2,8 +2,7 @@ package subscriber.model;
 
 
 import lombok.Data;
-import subscriber.Dto.MessageActionType;
-import subscriber.Dto.MessageDto;
+import subscriber.dto.MessageActionType;
 
 import java.sql.Timestamp;
 
@@ -14,14 +13,25 @@ public class Message {
     private MessageActionType action;
     private Timestamp timestamp;
 
-    public static ActionTable getActionTable(MessageDto messageDto) {
+    public PurchaseEntity convertToPurchaseEntity() {
 
-        ActionTable actionTable = new ActionTable();
-        actionTable.setMsisdn(messageDto.getMsisdn());
-        actionTable.setAction(messageDto.getAction());
-        actionTable.setTimestamp(messageDto.getTimestamp());
+        PurchaseEntity purchaseEntity = new PurchaseEntity();
+        purchaseEntity.setMsisdn(msisdn);
+        purchaseEntity.setAction(action);
+        purchaseEntity.setTimestamp(timestamp);
 
-        return actionTable;
+        return purchaseEntity;
+
+    }
+
+    public SubscriptionEntity convertToSubscriptionEntity() {
+
+        SubscriptionEntity subscriptionEntity = new SubscriptionEntity();
+        subscriptionEntity.setMsisdn(msisdn);
+        subscriptionEntity.setAction(action);
+        subscriptionEntity.setTimestamp(timestamp);
+
+        return subscriptionEntity;
 
     }
 }

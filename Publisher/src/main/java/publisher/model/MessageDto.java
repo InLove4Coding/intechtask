@@ -8,7 +8,7 @@ import java.util.Random;
 
 
 /**
- * <b>Dto содержащее структуру данных отправляемых сообщений</b>.
+ * <b>dto содержащее структуру данных отправляемых сообщений</b>.
  *
  * @author KuzminEY
  */
@@ -20,15 +20,17 @@ public class MessageDto {
     private MessageActionType action;
     // Время(UNIX timestamp)
     @JsonFormat(shape = JsonFormat.Shape.NUMBER)
+    //Long add....
     private Timestamp timestamp;
 
     public MessageDto() {
-        //Пусть будет номер от 0 до 1000
+        //Пусть будет номер от 0 до 1000. Не отрицательны до максимального.
         this.msisdn = new Random().nextInt(1001);
 
-        if (new Random().nextInt(2) == 1) {
+        if (new Random().nextBoolean()) {
             this.action = MessageActionType.PURCHASE;
         } else this.action = MessageActionType.SUBSCRIPTION;
+
         this.timestamp = new Timestamp(System.currentTimeMillis());;
     }
 }

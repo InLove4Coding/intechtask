@@ -3,9 +3,9 @@ package subscriber.Service;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import subscriber.model.ActionTable;
+import subscriber.model.SubscriptionEntity;
 
 
 @Repository
-public interface ReceiveActionMes extends CrudRepository<ActionTable, Integer> {
+public interface SubscriberRepository extends CrudRepository<SubscriptionEntity, Long> {
 }
