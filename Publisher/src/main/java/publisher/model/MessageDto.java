@@ -2,6 +2,7 @@ package publisher.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Timestamp;
 import java.util.Random;
@@ -13,6 +14,7 @@ import java.util.Random;
  * @author KuzminEY
  */
 @Data
+@Slf4j
 public class MessageDto {
     //Уникальный номер абонента
     private int msisdn;
@@ -26,6 +28,8 @@ public class MessageDto {
     public MessageDto() {
         //Пусть будет номер от 0 до 1000. Не отрицательны до максимального.
         this.msisdn = new Random().nextInt(1001);
+
+        log.info("Формируем номер для нового сообщения: {}",msisdn);
 
         if (new Random().nextBoolean()) {
             this.action = MessageActionType.PURCHASE;

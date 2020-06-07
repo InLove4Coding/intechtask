@@ -1,4 +1,4 @@
-package subscriber.Service;
+package subscriber.service;
 
 
 import org.springframework.data.repository.CrudRepository;

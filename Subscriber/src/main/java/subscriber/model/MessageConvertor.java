@@ -7,7 +7,7 @@ import subscriber.dto.MessageActionType;
 import java.sql.Timestamp;
 
 @Data
-public class Message {
+public class MessageConvertor {
 
     private int msisdn;
     private MessageActionType action;

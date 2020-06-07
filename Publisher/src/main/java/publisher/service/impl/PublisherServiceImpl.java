@@ -1,5 +1,6 @@
 package publisher.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
@@ -11,6 +12,7 @@ import publisher.model.MessageDto;
 import publisher.service.PublisherService;
 
 @Service
+@Slf4j
 public class PublisherServiceImpl implements PublisherService {
 
     private final RestTemplate restTemplate;
@@ -25,6 +27,7 @@ public class PublisherServiceImpl implements PublisherService {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<MessageDto> httpEntity = new HttpEntity<>(messageDto, httpHeaders);
+        log.info("Отправляем сообщение в Subscriber {}", messageDto);
         restTemplate.postForEntity("http://localhost:8080/api/subscriber/v1/receiveMessage", httpEntity, String.class);
     }
 
