@@ -1,0 +1,24 @@
+networks:
+  docknet:
+    driver: bridge
+    ipam:
+      config:
+        - gateway: 172.119.0.1 #Шлюз
+          subnet: 172.119.0.0/16 #Маска сети (16 адресов)
+      driver: default
+services:
+  publisher:
+    networks:
+      docknet:
+        ipv4_address: 172.119.0.2
+    image: publisher
+    ports:
+    - 8083:8083 # порт 8083 внутри паблишера - будет проброшен на внешку
+  subscriber:
+    networks:
+      docknet:
+        ipv4_address: 172.119.0.3
+    image: subscriber
+
+version: '2.0'
+volumes: {}

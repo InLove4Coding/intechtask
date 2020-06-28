@@ -2,6 +2,7 @@ package publisher.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -16,6 +17,9 @@ import publisher.service.PublisherService;
 public class PublisherServiceImpl implements PublisherService {
 
     private final RestTemplate restTemplate;
+    //TODO: Доделать url
+    @Value("${subscriber.url}")
+    private String url;
 
     @Autowired
     public PublisherServiceImpl(RestTemplateBuilder builder) {
@@ -28,7 +32,6 @@ public class PublisherServiceImpl implements PublisherService {
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<MessageDto> httpEntity = new HttpEntity<>(messageDto, httpHeaders);
         log.info("Отправляем сообщение в Subscriber {}", messageDto);
-        restTemplate.postForEntity("http://localhost:8080/api/subscriber/v1/receiveMessage", httpEntity, String.class);
+        restTemplate.postForEntity(url, httpEntity, String.class);
     }
-
 }

@@ -1,13 +1,13 @@
 spring:
   jpa:
-    database: MYSQL
+    database: h2
     show-sql: true
     hibernate:
       ddl-auto: create-drop # drop удобен для теста проекта.
   datasource:
-    platform: mysql
-    url: jdbc:mysql://localhost:3306/message_scheme?serverTimezone=UTC # serverTimezone для решения ошибки MySql
+    platform: h2
+    url: jdbc:h2:mem:testdb # serverTimezone для решения ошибки MySql
     username: root
     password: admin
-    driverClassName: com.mysql.cj.jdbc.Driver
+    driverClassName: org.h2.Driver
 

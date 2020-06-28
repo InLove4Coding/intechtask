@@ -26,6 +26,5 @@ public class SubscriberController {
         log.info("Принятое сообщение от Publisher: {}", messageConvertor);
 
         subscribeService.handleMessage(messageConvertor);
-
     }
 }

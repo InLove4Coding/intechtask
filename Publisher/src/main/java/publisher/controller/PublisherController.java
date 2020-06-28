@@ -12,7 +12,7 @@ import publisher.service.PublisherService;
 @Slf4j
 public class PublisherController {
 
-    private PublisherService publisherService;
+    private final PublisherService publisherService;
 
     public PublisherController(PublisherService publisherService) {
         this.publisherService = publisherService;
