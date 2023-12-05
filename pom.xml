@@ -24,7 +24,7 @@
 
     <properties>
         <slf4j.version>1.7.30</slf4j.version>
-        <logback.versio>1.2.3</logback.versio>
+        <logback.versio>1.2.13</logback.versio>
         <lombok.version>1.18.12</lombok.version>
     </properties>
 
